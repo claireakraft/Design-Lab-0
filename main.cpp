@@ -1,5 +1,6 @@
 #include "mbed.h"
 #include "CKraft_binaryutils.h"
+//#include <thread>
 
 #define set (uint32_t *)0x50000508
 #define clear (uint32_t *)0x5000050C
@@ -16,6 +17,10 @@ int main()
 
     while (true) {
         setbit(set, pin);
+        thread_sleep_for(1000);
+        setbit(clear, pin);
+        thread_sleep_for(1000);
+
     }
 }
 
